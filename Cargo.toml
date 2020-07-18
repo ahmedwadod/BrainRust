@@ -3,7 +3,10 @@ name = "brain_rust"
 version = "0.0.1"
 authors = ["Ahmed Abdelwadod <me@ahmedwadod.com>"]
 edition = "2018"
+description = "BrainRust is Brainfuck to C compiler written in Rust."
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "bfc"
+path = "src/main.rs"
 
 [dependencies]

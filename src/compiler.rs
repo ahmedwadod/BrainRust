@@ -1,5 +1,5 @@
 // BrainRust compiler.
-// Compiler/convert brainfuck to C code
+// Compiler/convert Brainfuck to C code
 
 pub fn compile_to_c(bf_code: &Vec<char>) -> String{
     // String to store the C code

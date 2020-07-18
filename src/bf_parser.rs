@@ -1,5 +1,5 @@
 // BrainRust parser
-// Takes the brainfuck symbols out of the code text
+// Takes the Brainfuck symbols out of the code text
 
 pub fn parse_bf(code: String) -> Vec<char>{
     // Vector to store the symbols
