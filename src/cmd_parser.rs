@@ -1,3 +1,6 @@
+// BrainRust Command line parser
+// Parse the commandline arguments and return the Compiler Flags back
+
 use std::env;
 
 // Compiler Flags type
@@ -34,6 +37,7 @@ pub fn parse() -> CompilerFlags{
         return resp;
     }
 
+    // Parse the arguments
     for a in args{
         if a.starts_with("-"){
             if a == "-o"{
@@ -60,5 +64,6 @@ pub fn parse() -> CompilerFlags{
         }
     }
 
+    // Return the Compiler Flags
     resp
 }

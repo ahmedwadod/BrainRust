@@ -1,3 +1,6 @@
+// The main file for BrainRust.
+// Author: Ahmed Abdelwadod. Date: July 19th 2020.
+
 const VERSION: &str = "0.0.1";
 const DESCRIPTION: &str = "BrainRust is Brainfuck to C compiler written in Rust.";
 
@@ -27,8 +30,6 @@ fn main() {
     println!("Welcome to BrainRust Ver {} By Ahmed Abdelwadoud.\n", VERSION);
     let flags = cmd_parser::parse();
 
-    // println!("{:?}", (flags.file_to_compile, flags.output_flag, flags.output_file, flags.compile_only_flag, flags.help_flag, flags.error));
-
     if flags.help_flag{
         println!("{}\n{}", DESCRIPTION, HELPTEXT);
         return;
@@ -52,7 +53,6 @@ fn main() {
         let in_code = compiler::compile_to_c(&code);
         c_code.push_str(in_code.as_str());
         c_code.push_str("\nreturn 0;\n}");
-        // println!("{}", c_code);
 
         let prog_c_path = Path::new("prog.c");
         let mut prog_c_file = match File::create(&prog_c_path){
