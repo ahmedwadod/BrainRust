@@ -4,10 +4,11 @@ const DESCRIPTION: &str = "BrainRust is Brainfuck to C compiler written in Rust.
 mod cmd_parser;
 mod bf_parser;
 mod compiler;
+mod builder;
 
 use std::fs::File;
 use std::path::Path;
-use std::{io::Read, io::Write, ops::Add};
+use std::{io::Read, io::Write};
 
 const HELPTEXT: &str = "Syntax: bfc <input_file> [-o <output_file>] [-c] [-h]
     []: Optional
@@ -60,13 +61,19 @@ fn main() {
         };
         match prog_c_file.write_all(c_code.as_bytes()){
             Err(e) => panic!("Error in generating prog.c: {}", e),
-            Ok(_) => println!("Generated prog.c")
+            Ok(_) => print!("Generated prog.c")
         };
 
         if flags.compile_only_flag{
             return;
         }else{
-            // Build here
+            let mut output_file_name = String::from("a.out");
+            if flags.output_flag{
+                output_file_name = flags.output_file.clone();
+            }
+            builder::build("prog.c", output_file_name.as_str());
+
+            println!("Built {} successfully.", output_file_name);
         }
     }
 }
