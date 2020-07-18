@@ -13,7 +13,7 @@ use std::fs::File;
 use std::path::Path;
 use std::{io::Read, io::Write};
 
-const HELPTEXT: &str = "Syntax: bfc <input_file> [-o <output_file>] [-c] [-h]
+const HELPTEXT: &str = "Syntax: brc <input_file> [-o <output_file>] [-c] [-h]
     []: Optional
     input_file: Brainfuck code file.
     output_file: Name of the executable out file.

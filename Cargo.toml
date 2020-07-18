@@ -6,7 +6,7 @@ edition = "2018"
 description = "BrainRust is Brainfuck to C compiler written in Rust."
 
 [[bin]]
-name = "bfc"
+name = "brc"
 path = "src/main.rs"
 
 [dependencies]
